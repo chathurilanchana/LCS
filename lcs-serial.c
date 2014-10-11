@@ -101,7 +101,7 @@ void buildCostMatrix() {
 
 void Reverse(char str[]) {
 	int i, j;
-	char temp[100000];
+	char temp[30000];
 	for (i = strlen(str) - 1, j = 0; i + 1 != 0; --i, ++j) {
 		temp[j] = str[i];
 	}
