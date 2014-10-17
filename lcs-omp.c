@@ -110,8 +110,8 @@ void buildCostMatrix() {
 		 inside the for loop for each thread. If we use x-- for the second line we have to use locks
 		 and have to avoid races. But with this,we dont need them*/
 
-	//Adding load balancing consumed much more time coz our algo is optimized for caching
-   #pragma omp parallel for private(j,y) if((innerLoopLimit-innerLoopStartingIndex)>=100) schedule (static,1)
+	//the default scheduling which is chunk size=(loop count)/num_thread is the best for us as each iteraton has the same workload
+   #pragma omp parallel for private(j,y) if((innerLoopLimit-innerLoopStartingIndex)>=100) //schedule (static,100)
 		for (j = innerLoopStartingIndex; j <= innerLoopLimit; j++) {
 			y = i - (j - overflowcounter);
 			if (seq1[y - 1] == seq2[j - 1]) {
