@@ -57,6 +57,7 @@ void readFromInput(char *FileName) {
 		}
 	}
 	fclose(input);
+	free(input);
 }
 
 short cost(int x) {
@@ -132,7 +133,6 @@ void buildCostMatrix() {
 		}
 
 	}
-	fprintf(stdout, "done");
 	/*for(i=0;i<=rowCount;i++){
 	 printf("\n");
 	 for(j=0;j<=columnCount;j++){
@@ -194,6 +194,12 @@ void clearMemory() {
 
 int main(int argc, char **argv) {
 
+	/* used to test the correctness of program by setting this to more than cores
+#pragma omp parallel
+	{
+	omp_set_num_threads(10);
+    }*/
+
 	char *l_pFileName = argv[1];
 	readFromInput(l_pFileName);
 	time_t start_t, end_t;
@@ -212,3 +218,4 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
+
