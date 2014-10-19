@@ -210,8 +210,8 @@ int main(int argc, char **argv) {
 	double diff_t;
 	diff_t = difftime(end_t, start_t);
 	int matchLength = strlen(commonStr);
-	fprintf(stdout, "Time taken for Building the matrix and find LCS=%f\n",
-			diff_t);
+	/*fprintf(stdout, "Time taken for Building the matrix and find LCS=%f\n",
+			diff_t);*/
 	fprintf(stdout, "%d\n", matchLength);
 	fprintf(stdout, "%s\n", commonStr);
 	clearMemory();
