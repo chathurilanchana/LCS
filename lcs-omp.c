@@ -57,7 +57,6 @@ void readFromInput(char *FileName) {
 		}
 	}
 	fclose(input);
-	free(input);
 }
 
 short cost(int x) {
