@@ -153,13 +153,13 @@ void clearMemory(){
 int main(int argc, char **argv) {
 
 	char *l_pFileName = argv[1];
-        double start_t=omp_get_wtime();
+        //double start_t=omp_get_wtime();
 	readFromInput(l_pFileName);
 	buildCostMatrix();
 	traverseToFindMatch();
-	double end_t=omp_get_wtime();
+	//double end_t=omp_get_wtime();
 	int matchLength=strlen(commonStr);
-	fprintf(stdout,"Time taken for serial code: %.16g \n",end_t-start_t);
+	//fprintf(stdout,"Time taken for serial code: %.16g \n",end_t-start_t);
 	fprintf(stdout,"%d\n",matchLength);
 	fprintf(stdout, "%s\n", commonStr);
     clearMemory();
