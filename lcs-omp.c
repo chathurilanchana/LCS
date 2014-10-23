@@ -200,17 +200,13 @@ int main(int argc, char **argv) {
     }*/
 
 	char *l_pFileName = argv[1];
+	double start_t=omp_get_wtime();
 	readFromInput(l_pFileName);
-	time_t start_t, end_t;
-	time(&start_t);
 	buildCostMatrix();
 	traverseToFindMatch();
-	time(&end_t);
-	double diff_t;
-	diff_t = difftime(end_t, start_t);
+	double end_t=omp_get_wtime();
 	int matchLength = strlen(commonStr);
-	/*fprintf(stdout, "Time taken for Building the matrix and find LCS=%f\n",
-			diff_t);*/
+	fprintf(stdout, "Time taken for parallel: =%.16g\n seconds",end_t-start_t);
 	fprintf(stdout, "%d\n", matchLength);
 	fprintf(stdout, "%s\n", commonStr);
 	clearMemory();
