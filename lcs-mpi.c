@@ -1,7 +1,6 @@
 /*
  ============================================================================
  Name        : lcs-mpi.c
- Author      : Chathuri
  Version     :
  Copyright   : Your copyright notice
  Description : Hello MPI World in C 
